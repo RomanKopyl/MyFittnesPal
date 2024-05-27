@@ -1,15 +1,22 @@
 
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import FoodListItem from '../components/FoodListItem';
+
+const foodItems = [
+  { label: "Pizza", cal: 75, brand: 'Dominos' },
+  { label: "Apple", cal: 25, brand: 'Other' },
+  { label: "Coffee", cal: 150, brand: 'Americano' }
+]
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* Food item view */}
-
-      <FoodListItem item={{ label: "Pizza", cal: 75, brand: 'Dominos' }} />
-      <FoodListItem item={{ label: "Apple", cal: 25, brand: 'Other' }} />
+      <FlatList
+        data={foodItems}
+        renderItem={({ item }) => <FoodListItem item={item} />}
+        contentContainerStyle={{ gap: 5 }}
+      />
     </View>
   );
 }
