@@ -4,20 +4,22 @@ import { StyleSheet, Text, View } from "react-native";
 
 interface Props {
     item: {
-        label: string
-        cal: number
-        brand: string
+        foodId?: string
+        label?: string
+        brand?: string
+        nutrients: {
+            ENERC_KCAL: number
+        }
     }
 }
 
 const FoodListItem: React.FC<Props> = ({ item }) => {
-    const { label, cal, brand } = item;
 
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.label}>
-                    {label}
+                    {item.label}
                 </Text>
                 <Text style={styles.text}>
                     {item.nutrients.ENERC_KCAL} cal, {item.brand}
@@ -25,7 +27,7 @@ const FoodListItem: React.FC<Props> = ({ item }) => {
             </View>
 
             <AntDesign name="plus" size={30} color="royalblue" />
-        </View >
+        </View>
     );
 }
 
