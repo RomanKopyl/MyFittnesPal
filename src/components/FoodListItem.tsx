@@ -20,7 +20,7 @@ const FoodListItem: React.FC<Props> = ({ item }) => {
                     {label}
                 </Text>
                 <Text style={styles.text}>
-                    {`${cal} cal, ${brand}`}
+                    {item.nutrients.ENERC_KCAL} cal, {item.brand}
                 </Text>
             </View>
 
