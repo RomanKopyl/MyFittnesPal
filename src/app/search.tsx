@@ -58,8 +58,8 @@ export default function SearchScreen() {
       {loading && <ActivityIndicator />}
       <FlatList
         data={foodItems}
-        renderItem={({ item }) => <FoodListItem item={item.food} />}
-        ListEmptyComponent={() => <Text>Not found</Text>}
+        renderItem={({ item }) => <FoodListItem item={item} />}
+        ListEmptyComponent={() => <Text>Search a food</Text>}
         contentContainerStyle={{ gap: 5 }}
       />
     </View>
